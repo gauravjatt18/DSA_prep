@@ -1,0 +1,21 @@
+
+class Solution {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        
+        // Case 1: Both are null
+        if (p == null && q == null)
+            return true;
+        
+        // Case 2: One is null
+        if (p == null || q == null)
+            return false;
+        
+        // Case 3: Values differ
+        if (p.val != q.val)
+            return false;
+        
+        // Recursive check
+        return isSameTree(p.left, q.left) 
+            && isSameTree(p.right, q.right);
+    }
+}
